@@ -12,24 +12,43 @@
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { renderCustomIcon, renderIcon } from "@/utils";
+
+const router = useRouter();
+
 const menuOptions = [
   {
-    label: "Dashboard",
-    key: "dashboard",
-    // icon: renderIcon(HomeIcon),
+    label: "Workbench",
+    key: "workbench",
+    icon: renderIcon("icon-park-outline:workbench", { size: 18 }),
+    path: "/workbench",
   },
   {
-    label: "Settings",
-    key: "settings",
-    children: [
-      { label: "Profile", key: "profile" },
-      { label: "Security", key: "security" },
-    ],
+    label: "System",
+    key: "system",
+    icon: renderIcon("mdi-account-off", { size: 18 }),
+    path: "/system",
   },
+  // {
+  //   label: "Settings",
+  //   key: "settings",
+  //   children: [
+  //     { label: "Profile", key: "profile", path: '/profile' },
+  //     { label: "Security", key: "security", path: '/security'  },
+  //   ],
+  // },
 ];
 
-function handleMenuSelect() {}
+function getIcon(meta) {
+  if (meta?.customIcon) return renderCustomIcon(meta.customIcon, { size: 18 });
+  if (meta?.icon) return renderIcon(meta.icon, { size: 18 });
+  return null;
+}
+
+function handleMenuSelect(key, item) {
+  router.push(item.path);
+}
 </script>
 
 <style lang="scss">

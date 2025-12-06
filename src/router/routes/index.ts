@@ -24,4 +24,22 @@ export const basicRoutes = [
     ],
     meta: { order: 1 },
   },
+  {
+    name: "System-dev",
+    path: "/system",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        component: () => import("@/views/system/index.vue"),
+        name: "System",
+        meta: {
+          title: "System Default",
+          icon: "icon-park-outline:workbench",
+          affix: true,
+        },
+      },
+    ],
+    meta: { order: 5 },
+  },
 ];
