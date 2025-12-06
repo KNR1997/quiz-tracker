@@ -1,7 +1,7 @@
 import { isNullOrUndef } from '@/utils'
 
-export function setupMessage(NMessage) {
-  let loadingMessage = null
+export function setupMessage(NMessage: any) {
+  let loadingMessage: any = null
   class Message {
     /**
      * 规则：
@@ -18,7 +18,7 @@ export function setupMessage(NMessage) {
       }, duration)
     }
 
-    showMessage(type, content, option = {}) {
+    showMessage(type: any, content: any, option: any) {
       if (loadingMessage && loadingMessage.type === 'loading') {
         // 如果存在则替换正在显示的loading message
         loadingMessage.type = type
@@ -37,23 +37,23 @@ export function setupMessage(NMessage) {
       }
     }
 
-    loading(content) {
+    loading(content: any) {
       this.showMessage('loading', content, { duration: 0 })
     }
 
-    success(content, option = {}) {
+    success(content: any, option = {}) {
       this.showMessage('success', content, option)
     }
 
-    error(content, option = {}) {
+    error(content: any, option = {}) {
       this.showMessage('error', content, option)
     }
 
-    info(content, option = {}) {
+    info(content: any, option = {}) {
       this.showMessage('info', content, option)
     }
 
-    warning(content, option = {}) {
+    warning(content: any, option = {}) {
       this.showMessage('warning', content, option)
     }
   }
@@ -61,8 +61,8 @@ export function setupMessage(NMessage) {
   return new Message()
 }
 
-export function setupDialog(NDialog) {
-  NDialog.confirm = function (option = {}) {
+export function setupDialog(NDialog: any) {
+  NDialog.confirm = function (option: any) {
     const showIcon = !isNullOrUndef(option.title)
     return NDialog[option.type || 'warning']({
       showIcon,

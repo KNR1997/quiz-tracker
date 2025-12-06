@@ -42,4 +42,23 @@ export const basicRoutes = [
     ],
     meta: { order: 5 },
   },
+  {
+    name: 'Profile-dev',
+    path: '/profile',
+    component: Layout,
+    isHidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/profile/index.vue'),
+        name: 'Profile',
+        meta: {
+          title: 'Profile',
+          icon: 'user',
+          affix: true,
+        },
+      },
+    ],
+    meta: { order: 99 },
+  },
 ];

@@ -19,6 +19,9 @@
       >
         <AppHeader />
       </header>
+      <section v-if="tags.visible" hidden border-b bc-eee sm:block dark:border-0>
+        <AppTags :style="{ height: `${tags.height}px` }" />
+      </section>
       <section flex-1 overflow-hidden bg-hex-f5f6fb dark:bg-hex-101014>
         <AppMain />
       </section>
@@ -30,6 +33,7 @@
 import AppHeader from "./components/header/index.vue";
 import SideBar from "./components/sidebar/index.vue";
 import AppMain from "./components/AppMain.vue";
+import AppTags from './components/tags/index.vue'
 import { useAppStore } from "~/src/store";
 import { header, tags } from "~/settings";
 

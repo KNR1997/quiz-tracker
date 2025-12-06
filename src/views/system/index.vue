@@ -101,7 +101,7 @@ function deleteRow(row) {
 }
 
 const tableData = ref([
-  { id: 1, name: "Task A", description: "Prepare documentation" },
-  { id: 2, name: "Task B", description: "Build UI for dashboard" },
+  { id: 1, name: "Task A", description: "Prepare documentation", loading: false },
+  { id: 2, name: "Task B", description: "Build UI for dashboard", loading: false },
 ]);
 </script>

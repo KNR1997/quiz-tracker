@@ -20,12 +20,13 @@ export function formatDate(date = undefined, format = 'YYYY-MM-DD') {
  * @param {Number} wait
  * @returns {Function}
  */
-export function throttle(fn, wait) {
+export function throttle(fn: any, wait: any) {
   var context, args
   var previous = 0
 
   return function () {
     var now = +new Date()
+    // @ts-ignore
     context = this
     args = arguments
     if (now - previous > wait) {
@@ -42,9 +43,11 @@ export function throttle(fn, wait) {
  * @param {boolean} immediate
  * @return {*}
  */
-export function debounce(method, wait, immediate) {
-  let timeout
+export function debounce(method: any, wait: any, immediate: any) {
+  let timeout: any
+  // @ts-ignore
   return function (...args) {
+    // @ts-ignore
     let context = this
     if (timeout) {
       clearTimeout(timeout)

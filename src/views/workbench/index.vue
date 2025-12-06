@@ -4,7 +4,7 @@
       <n-card rounded-10>
         <div flex items-center justify-between>
           <div flex items-center>
-            <!-- <img rounded-full width="60" :src="userStore.avatar" /> -->
+            <img rounded-full width="60" src="/tauri.svg" />
             <div ml-10>
               <p text-20 font-semibold>hello, admin</p>
               <p mt-5 text-14 op-60>Today is another day full of energy!</p>

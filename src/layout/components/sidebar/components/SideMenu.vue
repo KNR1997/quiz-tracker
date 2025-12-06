@@ -12,7 +12,7 @@
   />
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { renderCustomIcon, renderIcon } from "@/utils";
 
 const router = useRouter();
@@ -30,6 +30,12 @@ const menuOptions = [
     icon: renderIcon("mdi-account-off", { size: 18 }),
     path: "/system",
   },
+  {
+    label: "Profile",
+    key: "profile",
+    icon: renderIcon("mdi-account-off", { size: 18 }),
+    path: "/profile",
+  },
   // {
   //   label: "Settings",
   //   key: "settings",
@@ -39,12 +45,6 @@ const menuOptions = [
   //   ],
   // },
 ];
-
-function getIcon(meta) {
-  if (meta?.customIcon) return renderCustomIcon(meta.customIcon, { size: 18 });
-  if (meta?.icon) return renderIcon(meta.icon, { size: 18 });
-  return null;
-}
 
 function handleMenuSelect(key, item) {
   router.push(item.path);

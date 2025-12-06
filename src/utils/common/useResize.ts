@@ -1,4 +1,4 @@
-export function useResize(el, cb) {
+export function useResize(el: any, cb: any) {
   const observer = new ResizeObserver((entries) => {
     cb(entries[0].contentRect)
   })
@@ -6,11 +6,11 @@ export function useResize(el, cb) {
   return observer
 }
 
-const install = (app) => {
-  let observer
+const install = (app: any) => {
+  let observer: any
 
   app.directive('resize', {
-    mounted(el, binding) {
+    mounted(el: any, binding: any) {
       observer = useResize(el, binding.value)
     },
     beforeUnmount() {

@@ -4,6 +4,7 @@ const prefixKey = ''
 
 export const createLocalStorage = function (option = {}) {
   return createStorage({
+    // @ts-ignore
     prefixKey: option.prefixKey || '',
     storage: localStorage,
   })
@@ -11,6 +12,7 @@ export const createLocalStorage = function (option = {}) {
 
 export const createSessionStorage = function (option = {}) {
   return createStorage({
+    // @ts-ignore
     prefixKey: option.prefixKey || '',
     storage: sessionStorage,
   })
